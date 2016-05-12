@@ -1,0 +1,73 @@
+﻿https://marketplace.visualstudio.com/items?itemName=lukehoban.Go
+http://www.cnblogs.com/mstmdev/p/5454981.html
+http://studygolang.com/articles/6218
+参考：http://wiselyman.iteye.com/blog/2171562
+
+go get -u -v github.com/nsf/gocode
+go get -u -v github.com/rogpeppe/godef
+go get -u -v github.com/golang/lint/golint
+go get -u -v github.com/lukehoban/go-outline
+go get -u -v sourcegraph.com/sqs/goreturns
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v github.com/tpng/gopkgs
+go get -u -v github.com/newhook/go-symbols
+go get -u -v golang.org/x/tools/cmd/guru
+
+Colorization 代码着彩色
+Completion Lists 代码自动完成（使用gocode）
+Snippets  代码片段
+Quick Info 快速提示信息（使用godef）
+Goto Definition 跳转到定义（使用godef）
+Find References  搜索参考引用（使用go-find-references）
+File outline 文件大纲（使用go-outline）
+Workspace symbol search 工作区符号搜索（使用 go-symbols）
+Rename 重命名（使用gorename）
+Build-on-save 保存构建（使用go build和go test）
+Format 代码格式化（使用goreturns或goimports或gofmt）
+Add Imports  添加引用（使用 gopkgs）
+Debugging 调试代码（使用delve）
+
+https://github.com/derekparker/delve.git
+https://github.com/derekparker/delve/blob/master/Documentation/installation/windows/install.md
+
+
+${GOPATH}/Go/{src,pkg,bin}
+
+src:用于以代码包的形式组织并保存Go源文件。
+pkg:用于存放经由go instll命令构建安装后的代码包（包含Go库源码文件）的“.a”归档文件。该目录与GOROOT目录下的pkg功能类似。区别在于，工作区的pkg目录专门用来存放用（程序开发者）户代码的归档文件。
+bin:与pkg目录类似，在通过go install命令完成安装后，保存由Go命令源码文件生成的可执行文件。
+
+
+func Compute(value1 int,value2 float64)(result float64,err error) {
+    //函数体
+}
+Go支持多个返回值。以上的示例函数Compute()返回了两个值，一个叫result，另一个是err。
+并不是所有返回值都必须赋值。在函数返回时没有被明确赋值的返回值都会被设置为默认值，比如result会被设置为0.0，err会被设置为nil。
+
+var v1 int
+var v2 string
+var v3 [10]int  //数组
+var v4 struct {
+    f int
+}
+var v6 *int  //指针
+var v7 map[string]int //map，key为string类型，value为int类型
+var v8 func(a int) int 
+
+var (
+    v1 int
+    v2 string
+    v3 float64
+)
+
+'var v1 int =10' = 'var v2 = 10' = 'v3 := 10'
+*上面这3种用法效果都是一样的。“:=”用于明确表达同时进行变量声明和初始化的工作。
+
+
+
+
+
+
+
+
+
