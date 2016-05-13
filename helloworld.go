@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"runtime"
 	"unsafe"
+	"math"
 )
 
 func init() {
@@ -48,6 +49,12 @@ func getName() (firstName, middleName, lastName, nickName string) {
 	lastName = "Li"
 	nickName = "SQL Li"
 	return
+}
+
+//浮点数比较
+//p为用户自定义的比较精度，例如：0.00001
+func IsEqual(f1, f2 ,p float64) bool {
+	return math.Fdim(f1,f2) < p
 }
 
 func sum(values []int, resultChan chan int) {
